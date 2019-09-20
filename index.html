@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Первая лабораторная </title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <script type="text/javascript" src="checker.js"></script>
+    </head>
+
+    <body>
+        <h1 class="center">Лабораторная работа №1</h1>
+        <h2 class="center">Программирование интернет-приложений</h2>
+        <div style="float: right">
+            <p style="text-align: left"> 
+                Создатель: Бекоев Андрей <br>
+                Преподаватель: Киреев Валерий Юрьевич<br>
+                Вариант: 211002
+            </p>
+        </div>
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <p class="center">
+            <img src="images/area.png" alt="Area" width="300px" height="300px">
+        </p>
+
+        <form action="handler.php" name="MyForm" accept-charset="utf-8" enctype="text/plain" method="GET" autocomplete="off"> 
+            <p class="center" style="font-weight: 500">
+                Изменения по X: <br>
+                <input type="checkbox" name="coordinateX" value="-2"> -2
+                <input type="checkbox" name="coordinateX" value="-1.5"> -1.5
+                <input type="checkbox" name="coordinateX" value="-1"> -1
+                <input type="checkbox" name="coordinateX" value="-0.5"> -0.5
+                <input type="checkbox" name="coordinateX" value="0"> 0
+                <input type="checkbox" name="coordinateX" value="0.5"> 0.5 
+                <input type="checkbox" name="coordinateX" value="1"> 1
+                <input type="checkbox" name="coordinateX" value="1.5"> 1.5 
+                <input type="checkbox" name="coordinateX" value="2"> 2 <br><br> 
+                Изменения по Y: <br>
+                <input type="text" name="Y" id="Y"> <br><br>
+                Изменения по R: <br>
+                <input type="radio" name="radius" value="1"> 1
+                <input type="radio" name="radius" value="1.5"> 1.5
+                <input type="radio" name="radius" value="2"> 2
+                <input type="radio" name="radius" value="2.5"> 2.5
+                <input type="radio" name="radius" value="3"> 3 <br><br>
+                <input type="submit" value="Проверить" onclick="checkIfInside()">
+            </p>
+        </form>
+
+    </body>
+</html>

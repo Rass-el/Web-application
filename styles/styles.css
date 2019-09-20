@@ -1,0 +1,16 @@
+*:not(i){
+    font-family: Gill Sans, sans-serif;
+    font-weight: 100;
+}
+body {
+    background-color: #eeeed1;
+}
+
+.center {
+    text-align: center;
+}
+img.imgCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
