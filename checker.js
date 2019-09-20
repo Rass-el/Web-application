@@ -42,23 +42,28 @@ function checkIfInside() {
 
     // check rectangle area
     if (x <= 0 && x >= -r && y <= r/2 && y >= 0) {
-        alert("Dot inside!");
+        alert("Point inside!");
         return true;
     }
     // check triangle area
     if (x >= 0 && x <= r/2 && y <= r/2 && y >= 0 && x <= -y + 2) {
-        alert("Dot inside!");
+        alert("Point inside!");
         return true;
     }
     // check circle area
     if (x >= 0 && x <= r/2 && y >= -r/2 && y <= 0 && x*x + y*y <= r*r/4) {
-        alert("Dot inside!");
+        alert("Point inside!");
         return true;
     }
-    alert("Dot outside!")
+    alert("Point outside!")
     return false;
 }
 
 function isEmpty(str) {
     return str.trim() == '';
+}
+
+function updateTime() {
+    let now = new Date();
+    timeField.innerHTML = "Текущее время: " + now.toString();    
 }

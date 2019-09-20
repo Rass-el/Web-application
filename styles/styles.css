@@ -14,3 +14,8 @@ img.imgCenter {
     margin-left: auto;
     margin-right: auto
 }
+.header {
+    color: rgb(196, 107, 107);
+    font-size: 16px;
+    font: monospace;
+}

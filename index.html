@@ -7,15 +7,21 @@
     </head>
 
     <body>
-        <h1 class="center">Лабораторная работа №1</h1>
-        <h2 class="center">Программирование интернет-приложений</h2>
-        <div style="float: right">
-            <p style="text-align: left"> 
-                Создатель: Бекоев Андрей <br>
-                Преподаватель: Киреев Валерий Юрьевич<br>
-                Вариант: 211002
-            </p>
-        </div>
+        <header>
+            <div class="header">
+                    <h1 class="center">Лабораторная работа №1</h1>
+                    <h2 class="center">Программирование интернет-приложений</h2>
+                    <h3 class="center"> Вариант: 211002 </h3>
+                    <div style="float: right">
+                        <p style="text-align: left"> 
+                            Создатель: Бекоев Андрей <br>
+                            Преподаватель: Киреев Валерий Юрьевич<br>
+                        </p>
+                    </div>
+            </div>
+        </header>
+        
+        
         <br> 
         <br> 
         <br> 
@@ -46,8 +52,15 @@
                 <input type="radio" name="radius" value="2.5"> 2.5
                 <input type="radio" name="radius" value="3"> 3 <br><br>
                 <input type="submit" value="Проверить" onclick="checkIfInside()">
+                <p id="time" class="centered"></p>
             </p>
         </form>
+        <script type="text/javascript">
+            let timeField = document.getElementById("time");
+            updateTime();
+            setInterval(updateTime, 1000);
+        </script>
+        
 
     </body>
 </html>
