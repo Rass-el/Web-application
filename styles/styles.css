@@ -19,3 +19,16 @@ img.imgCenter {
     font-size: 16px;
     font: monospace;
 }
+
+table {
+    border: 1px; /* Рамка вокруг таблицы */
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+}
+
+input:hover[type="submit"] {
+    color: #F89B4D;
+}
+
+*::selection {
+    background-color: #F89B4D;
+}

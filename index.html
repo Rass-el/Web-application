@@ -23,36 +23,34 @@
         
         
         <br> 
-        <br> 
-        <br> 
-        <br> 
+        <br>   
         <br> 
         <p class="center">
-            <img src="images/area.png" alt="Area" width="300px" height="300px">
+            <img src="images/area.png" alt="Area" width="270px" height="270px">
         </p>
 
-        <form action="handler.php" name="MyForm" accept-charset="utf-8" enctype="text/plain" method="GET" autocomplete="off"> 
+        <form onsubmit="return checkIfInside()" action="handler.php" name="MyForm" accept-charset="utf-8" enctype="text/plain" method="GET" autocomplete="off"> 
             <p class="center" style="font-weight: 500">
                 Изменения по X: <br>
-                <input type="checkbox" name="coordinateX" value="-2"> -2
-                <input type="checkbox" name="coordinateX" value="-1.5"> -1.5
-                <input type="checkbox" name="coordinateX" value="-1"> -1
-                <input type="checkbox" name="coordinateX" value="-0.5"> -0.5
-                <input type="checkbox" name="coordinateX" value="0"> 0
-                <input type="checkbox" name="coordinateX" value="0.5"> 0.5 
-                <input type="checkbox" name="coordinateX" value="1"> 1
-                <input type="checkbox" name="coordinateX" value="1.5"> 1.5 
-                <input type="checkbox" name="coordinateX" value="2"> 2 <br><br> 
+                <input type="checkbox" name="coordinateX[]" value="-2"> -2
+                <input type="checkbox" name="coordinateX[]" value="-1.5"> -1.5
+                <input type="checkbox" name="coordinateX[]" value="-1"> -1
+                <input type="checkbox" name="coordinateX[]" value="-0.5"> -0.5
+                <input type="checkbox" name="coordinateX[]" value="0"> 0
+                <input type="checkbox" name="coordinateX[]" value="0.5"> 0.5 
+                <input type="checkbox" name="coordinateX[]" value="1"> 1
+                <input type="checkbox" name="coordinateX[]" value="1.5"> 1.5 
+                <input type="checkbox" name="coordinateX[]" value="2"> 2 <br><br> 
                 Изменения по Y: <br>
-                <input type="text" name="Y" id="Y"> <br><br>
+                <input maxlength="7" type="text" name="Y" id="Y"> <br><br>
                 Изменения по R: <br>
                 <input type="radio" name="radius" value="1"> 1
                 <input type="radio" name="radius" value="1.5"> 1.5
                 <input type="radio" name="radius" value="2"> 2
                 <input type="radio" name="radius" value="2.5"> 2.5
                 <input type="radio" name="radius" value="3"> 3 <br><br>
-                <input type="submit" value="Проверить" onclick="checkIfInside()">
-                <p id="time" class="centered"></p>
+                <input type="submit" value="Проверить">
+                <p id="time" class="center"></p> 
             </p>
         </form>
         <script type="text/javascript">
