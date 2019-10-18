@@ -1,3 +1,13 @@
+<?php 
+session_name("fancyform");
+session_start(); 
+ini_set('session.cookie_httponly', 1);
+ini_set('session.entropy_file', '/dev/urandom');
+ini_set('session.hash_function', 'whirlpool');
+ini_set('session.use_only_cookies', 1);
+ini_set('session.use_cookies', true);
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,9 +19,9 @@
     <p class="center">
         <img src="images/area.png" alt="Area" width="270px" height="270px">
     </p>
+    
     <?php
-            $startTime = microtime();
-
+            $startTime = microtime(); 
             $x = $_GET["coordinateX"];
             $r = htmlspecialchars($_GET["radius"]);
             $y = htmlspecialchars($_GET["Y"]);
@@ -89,10 +99,26 @@
                                     for($i = 0; $i < count($x); ++$i) {
                                         if ($valid_points[$i] == true) {
                                             echo "for X=$x[$i]: ";
-                                            echo isInside($x[$i], $y, $r);
+                                            //echo isInside($x[$i], $y, $r);
+                                            $_SESSION["R = $r, Y = $y, X = $x[$i]"] = isInside($x[$i], $y, $r);
                                             echo "<br>";
                                         }
                                     }
+                                ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan='2'>
+                                <?php 
+                                    echo "Last shots:";
+                                    echo "<br>";
+                                    foreach ($_SESSION as $key => $point) {
+                                        printf ("for $key: "); 
+                                        printf( ($point) ? "Is inside\n" : "Is outside \n");
+                                        echo "<br>";
+                                    }
+                                
                                 ?>
                             </td>
                         </tr>
@@ -127,8 +153,9 @@
                 }
                 return true;
             }
-            function isInside($x, $y, $z) {
+            function isInside($x, $y, $r) {
                 // check rectangle area
+
                 if ($x <= 0 && $x >= -$r && $y <= $r/2 && $y >= 0) {
                     print "Point inside!";
                     return true;
@@ -147,5 +174,7 @@
                 return false;
             }
         ?>   
+        <p class="center"><a href="index.html">Назад</a></p>
+
     </body>  
 </html> 
